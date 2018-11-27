@@ -5,17 +5,47 @@
     android:layout_height="match_parent"
     tools:context=".MapsActivity">
 
-    <Button
-        android:id="@+id/zoomButton"
-        android:text="Zoom"
+    <ToggleButton
+        android:id="@+id/zoomToggleButton"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:textOff="Zoom In"
+        android:textOn="Zoom Out" />
+
+    <ToggleButton
+        android:id="@+id/placesToggleButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/zoomToggleButton"
+        android:textOff="Places Off"
+        android:textOn="Places On" />
+
+    <ToggleButton
+        android:id="@+id/directionsToggleButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/placesToggleButton"
+        android:textOff="Directions Off"
+        android:textOn="Directions On" />
 
     <fragment
         android:id="@+id/map"
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+
+    <FrameLayout
+        android:id="@+id/progressLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/semi_gray"
+        android:visibility="gone">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+    </FrameLayout>
 </RelativeLayout>
 
 
